@@ -16,9 +16,7 @@ app.post('/api/chat', async (req, res) => {
     const response = await client.messages.create({
       model: 'claude-sonnet-4-20250514',
       max_tokens: 1024,
-      system: `You are GuestFlow AI, a friendly assistant for service-based businesses.
-               Help guests understand services, check availability, and complete bookings.
-               Be warm, concise, and professional.`,
+      system: 'You are GuestFlow AI, a friendly assistant for service-based businesses. Help guests understand services, check availability, and complete bookings. Be warm, concise, and professional.',
       messages,
     })
 
@@ -31,5 +29,5 @@ app.post('/api/chat', async (req, res) => {
 })
 
 app.listen(3001, () => {
-  console.log('✅ GuestFlow server running on http://localhost:3001')
+  console.log('GuestFlow server running on http://localhost:3001')
 })
